@@ -11,9 +11,37 @@
          <h1 id="title">freeCodeCamp Survey Form</h1>
          <p id="description">Thank you for taking the time to help us improve the platform</p>
         <form id="survey-form">
-        <input id="name" type="text" placeholder="Enter your name" required>
-        <input input type="email" id="email" type="text" placeholder="Enter your email" required>
-        <input id="Age" type="number" placeholder="Enter your age" required>
+        <label id="name-label">Name</label><input id="name" type="text" placeholder="Enter your name" required>
+        <label id="email-label">Email</label><input input type="email" id="email" type="text" placeholder="Enter your email" required>
+        <label id="number-label">Age (optional)</label><input id="number" type="number" placeholder="Enter your age" min="0" max="99" required>
+            
+        <select id="dropdown" name="Select current role">
+                <option value="select current role" disabled selected>Select current role</option>
+                <option value="Student">Student</option>
+                <option value="Full time job">Full time job</option>
+                <option value="Full time learner">Full time learner</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+                <option value="Other">Other</option>
+        </select>
+
+        <label for="recommend?">
+            <input type="radio" name="recommend?" value="definitely">Definitely</input>
+            <input type="radio" name="recommend?" value="maybe">Maybe</input>
+            <input type="radio" name="recommend?" value="not sure">Not sure</input>
+        </label>
+        <label for="improve?">
+            <input type="checkbox" name="improve?" value="Front-end Projects">Front-end Projects</input>
+            <input type="checkbox" name="improve?" value="Back-end Projects">Back-end Projects</input>
+            <input type="checkbox" name="improve?" value="Data Visualization">Data Visualization</input>
+            <input type="checkbox" name="improve?" value="Challenges">Challenges</input>
+            <input type="checkbox" name="improve?" value="Open Source Community">Open Source Community</input>
+            <input type="checkbox" name="improve?" value="Gitter help rooms">Gitter help rooms</input>
+            <input type="checkbox" name="improve?" value="Videos">Videos</input>
+            <input type="checkbox" name="improve?" value="City Meetups">City Meetups</input>
+            <input type="checkbox" name="improve?" value="Wiki">Wiki</input>
+            <input type="checkbox" name="improve?" value="Forum">Forum</input>
+            <input type="checkbox" name="improve?" value="Additional Courses">Additional Courses</input>
+        </label>
 
         </form>
         </body>
