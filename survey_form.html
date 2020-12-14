@@ -2,19 +2,48 @@
     <head>
         <title>freeCodeCamp Survey Form</title>
 <style>
+html {
+background: url("https://i.insider.com/55788a8e69bedd1d69880a32?width=1100&format=jpeg&auto=webp");
+background-size: cover;
+}
+body {
+  
+}
+h1 {
+    text-align: center;
+    color: rgb(244, 245, 248);
+}
+#description {
+    text-align: center;
+    color: rgb(244, 247, 248);
+}
+#form {
+    margin: auto;
+    width: 50%;
+    background-color:rgba(2, 34, 21, 0.767)
+}
+#name, #email, #number, .text-input {
+    display: block;
+  
+}
 
 </style>
+
      </head>
     
      <body>
          <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
          <h1 id="title">freeCodeCamp Survey Form</h1>
+         
          <p id="description">Thank you for taking the time to help us improve the platform</p>
-        <form id="survey-form">
-        <label id="name-label">Name</label><input id="name" type="text" placeholder="Enter your name" required>
-        <label id="email-label">Email</label><input input type="email" id="email" type="text" placeholder="Enter your email" required>
-        <label id="number-label">Age (optional)</label><input id="number" type="number" placeholder="Enter your age" min="0" max="99" required>
-            
+    <div id="form">
+         <form id="survey-form">
+                <section>
+        <div class="text-input"><label id="name-label">Name</label><input id="name" type="text" placeholder="Enter your name" required></div>
+        <div class="text-input"><label id="email-label">Email</label><input input type="email" id="email" type="text" placeholder="Enter your email" required></div>
+        <div class="text-input"><label id="number-label">Age (optional)</label><input id="number" type="number" placeholder="Enter your age" min="0" max="99" required></div>
+                </section>
+        <div>
         <select id="dropdown" name="Select current role">
                 <option value="select current role" disabled selected>Select current role</option>
                 <option value="Student">Student</option>
@@ -23,27 +52,29 @@
                 <option value="Prefer not to say">Prefer not to say</option>
                 <option value="Other">Other</option>
         </select>
-
-        <label for="recommend?">
-            <input type="radio" name="recommend?" value="definitely">Definitely</input>
-            <input type="radio" name="recommend?" value="maybe">Maybe</input>
-            <input type="radio" name="recommend?" value="not sure">Not sure</input>
-        </label>
-        <label for="improve?">
-            <input type="checkbox" name="improve?" value="Front-end Projects">Front-end Projects</input>
-            <input type="checkbox" name="improve?" value="Back-end Projects">Back-end Projects</input>
-            <input type="checkbox" name="improve?" value="Data Visualization">Data Visualization</input>
-            <input type="checkbox" name="improve?" value="Challenges">Challenges</input>
-            <input type="checkbox" name="improve?" value="Open Source Community">Open Source Community</input>
-            <input type="checkbox" name="improve?" value="Gitter help rooms">Gitter help rooms</input>
-            <input type="checkbox" name="improve?" value="Videos">Videos</input>
-            <input type="checkbox" name="improve?" value="City Meetups">City Meetups</input>
-            <input type="checkbox" name="improve?" value="Wiki">Wiki</input>
-            <input type="checkbox" name="improve?" value="Forum">Forum</input>
-            <input type="checkbox" name="improve?" value="Additional Courses">Additional Courses</input>
-        </label>
-
-        </form>
+    </div>
+    <section>
+        <div><label for="definitely"><input id="definitely" type="radio" name="recommend?" value="definitely">Definitely</label></div>
+        <div><label for="maybe"><input id="maybe" type="radio" name="recommend?" value="maybe">Maybe</label></div>
+        <div><label for="not-sure"><input id="not-sure" type="radio" name="recommend?" value="not sure">Not sure</label></div>
+    </section>
+    <section>
+        <div><label for="1" id="checkbox"><input type="checkbox" name="improve?" value="Front-end Projects" class="clickable" id="1">Front-end Projects</label></div>
+        <div><label for="2" id="checkbox"><input type="checkbox" name="improve?" value="Back-end Projects" class="clickable" id="2">Back-end Projects</label></div>
+        <div><label for="3" id="checkbox"><input type="checkbox" name="improve?" value="Data Visualization" class="clickable" id="3">Data Visualization</label></div>
+        <div><label for="4" id="checkbox"><input type="checkbox" name="improve?" value="Challenges" class="clickable" id="4">Challenges</label></div>
+        <div><label for="5" id="checkbox"><input type="checkbox" name="improve?" value="Open Source Community" class="clickable" id="5">Open Source Community</label></div>
+        <div><label for="6" id="checkbox"><input type="checkbox" name="improve?" value="Gitter help rooms" class="clickable" id="6">Gitter help rooms</label></div>
+        <div><label for="7" id="checkbox"><input type="checkbox" name="improve?" value="Videos" class="clickable" id="7">Videos</label></div>
+        <div><label for="8" id="checkbox"><input type="checkbox" name="improve?" value="City Meetups" class="clickable" id="8">City Meetups</label></div>
+        <div><label for="9" id="checkbox"><input type="checkbox" name="improve?" value="Wiki" class="clickable" id="9">Wiki</label></div>
+        <div><label for="10" id="checkbox"><input type="checkbox" name="improve?" value="Forum" class="clickable" id="10">Forum</label></div>
+        <div><label for="11" id="checkbox"><input type="checkbox" name="improve?" value="Additional Courses" class="clickable" id="11">Additional Courses</label></div>
+    </section>
+    <div><textarea type="text" placeholder="Enter your comment here..."></textarea></div>
+    <div><button id ="submit" type="submit">Submit</button></div> 
+    </form>
+    </div>
         </body>
 
 
