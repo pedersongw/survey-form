@@ -8,22 +8,31 @@ html {
 background: url("https://res-3.cloudinary.com/fieldfisher/image/upload/c_lfill,g_auto/f_auto,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05");
 background-size: cover;
 font-family: Roboto;
+background-attachment: fixed;
 }
 body {
-  
+  height: 100%;
 }
 h1 {
     text-align: center;
     color: rgb(244, 245, 248);
+    padding-top: 6%;
 }
 #description {
     text-align: center;
     color: rgb(244, 247, 248);
+    font-style: italic;
 }
-#form {
-    margin: auto;
+#form-container {
+    margin-top: 5%;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
     width: 70%;
     background-color:rgba(57, 42, 122, 0.767)
+}
+#form {
+    padding: 50px;
 }
 #name, #email, #number, .text-input {
     display: block;
@@ -47,7 +56,8 @@ input {
          <h1 id="title">freeCodeCamp Survey Form</h1>
          
          <p id="description">Thank you for taking the time to help us improve the platform</p>
-    <div id="form">
+    <div id="form-container">
+         <div id="form">
          <form id="survey-form">
                 <section>
         <div class="text-input"><label id="name-label">Name</label><input id="name" type="text" placeholder="Enter your name" required></div>
@@ -96,6 +106,7 @@ input {
     <div><textarea type="text" placeholder="Enter your comment here..."></textarea></div>
     <div><button id ="submit" type="submit">Submit</button></div> 
     </form>
+    </div>
     </div>
         </body>
 
