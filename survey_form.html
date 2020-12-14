@@ -2,9 +2,12 @@
     <head>
         <title>freeCodeCamp Survey Form</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 html {
-background: url("https://i.insider.com/55788a8e69bedd1d69880a32?width=1100&format=jpeg&auto=webp");
+background: url("https://res-3.cloudinary.com/fieldfisher/image/upload/c_lfill,g_auto/f_auto,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05");
 background-size: cover;
+font-family: Roboto;
 }
 body {
   
@@ -19,14 +22,22 @@ h1 {
 }
 #form {
     margin: auto;
-    width: 50%;
-    background-color:rgba(2, 34, 21, 0.767)
+    width: 70%;
+    background-color:rgba(57, 42, 122, 0.767)
 }
 #name, #email, #number, .text-input {
     display: block;
-  
 }
-
+label {
+    color: white;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+input {
+    min-width: 1.5em;
+    min-height: 1.5em;
+    vertical-align: middle;
+}
 </style>
 
      </head>
@@ -43,8 +54,9 @@ h1 {
         <div class="text-input"><label id="email-label">Email</label><input input type="email" id="email" type="text" placeholder="Enter your email" required></div>
         <div class="text-input"><label id="number-label">Age (optional)</label><input id="number" type="number" placeholder="Enter your age" min="0" max="99" required></div>
                 </section>
-        <div>
-        <select id="dropdown" name="Select current role">
+        <div><label for="dropdown1">What option best describes your current role?</label></div>
+    <div>
+        <select id="dropdown1" name="Select current role">
                 <option value="select current role" disabled selected>Select current role</option>
                 <option value="Student">Student</option>
                 <option value="Full time job">Full time job</option>
@@ -54,10 +66,20 @@ h1 {
         </select>
     </div>
     <section>
-        <div><label for="definitely"><input id="definitely" type="radio" name="recommend?" value="definitely">Definitely</label></div>
+        <div><label for="definitely"><input id="definitely" type="radio" name="recommend?" value="definitely" checked>Definitely</label></div>
         <div><label for="maybe"><input id="maybe" type="radio" name="recommend?" value="maybe">Maybe</label></div>
         <div><label for="not-sure"><input id="not-sure" type="radio" name="recommend?" value="not sure">Not sure</label></div>
     </section>
+    <div><label for="dropdown2">What is your favorite feature of freeCodeCamp?</label></div>
+    <div>
+        <select id="dropdown2" name="favorite feature">
+                <option value="select an option" disabled selected>Select an option</option>
+                <option value="Challenges">Challenges</option>
+                <option value="Projects">Projects</option>
+                <option value="Community">Open Source</option>
+                <option value="Full time learner">Full time learner</option>
+        </select>
+    </div>
     <section>
         <div><label for="1" id="checkbox"><input type="checkbox" name="improve?" value="Front-end Projects" class="clickable" id="1">Front-end Projects</label></div>
         <div><label for="2" id="checkbox"><input type="checkbox" name="improve?" value="Back-end Projects" class="clickable" id="2">Back-end Projects</label></div>
