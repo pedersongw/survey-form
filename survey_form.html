@@ -2,7 +2,7 @@
     <head>
         <title>freeCodeCamp Survey Form</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 html {
 background: url("https://res-3.cloudinary.com/fieldfisher/image/upload/c_lfill,g_auto/f_auto,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05");
@@ -17,6 +17,12 @@ h1 {
     text-align: center;
     color: rgb(244, 245, 248);
     padding-top: 6%;
+    font-size: 2.25em;
+}
+.title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: block;
 }
 #description {
     text-align: center;
@@ -32,21 +38,61 @@ h1 {
     background-color:rgba(57, 42, 122, 0.767)
 }
 #form {
-    padding: 50px;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
 }
-#name, #email, #number, .text-input {
+#name, #email, #number, #dropdown, #dropdown2 {
     display: block;
+    width: 100%;
+    color: grey;
 }
-label {
+.grouplet {
+    margin-top: 25px;
+}
+label, #radio-title {
     color: white;
-    font-size: 1.5em;
-    vertical-align: middle;
+    font-size: 1.3em;
 }
-input {
+input, textarea, select {
     min-width: 1.5em;
-    min-height: 1.5em;
+    min-height: 2em;
     vertical-align: middle;
+    font-family: inherit;
 }
+.input {
+    display: block;
+    margin-right: .5rem;
+    vertical-align: middle;
+    height: 100%;
+}
+.input-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+#dropdown, #dropdown2 {
+    font-family: Roboto;
+}
+.clue {
+    font-family: Roboto;
+    color: white;
+    font-size: 1rem;
+    margin-left: 5px;
+}
+textarea {
+    width: 100%;
+    height: 7em;
+}
+button {
+    font-family: Roboto;
+}
+.submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
 </style>
 
      </head>
@@ -60,13 +106,13 @@ input {
          <div id="form">
          <form id="survey-form">
                 <section>
-        <div class="text-input"><label id="name-label">Name</label><input id="name" type="text" placeholder="Enter your name" required></div>
-        <div class="text-input"><label id="email-label">Email</label><input input type="email" id="email" type="text" placeholder="Enter your email" required></div>
-        <div class="text-input"><label id="number-label">Age (optional)</label><input id="number" type="number" placeholder="Enter your age" min="0" max="99" required></div>
+        <div class="text-input"><label class="title" id="name-label">Name</label><input id="name" type="text" placeholder="Enter your name" required></div>
+        <div class="text-input"><label class="title" id="email-label">Email</label><input input type="email" id="email" type="text" placeholder="Enter your email" required></div>
+        <div class="text-input"><label class="title" id="number-label">Age<span class="clue">(optional)</span></label><input id="number" type="number" placeholder="Enter your age" min="0" max="99" required></div>
                 </section>
-        <div><label for="dropdown1">What option best describes your current role?</label></div>
+        <div><label for="dropdown1" class="title">What option best describes your current role?</label></div>
     <div>
-        <select id="dropdown1" name="Select current role">
+        <select id="dropdown" name="Select current role">
                 <option value="select current role" disabled selected>Select current role</option>
                 <option value="Student">Student</option>
                 <option value="Full time job">Full time job</option>
@@ -75,12 +121,13 @@ input {
                 <option value="Other">Other</option>
         </select>
     </div>
-    <section>
-        <div><label for="definitely"><input id="definitely" type="radio" name="recommend?" value="definitely" checked>Definitely</label></div>
-        <div><label for="maybe"><input id="maybe" type="radio" name="recommend?" value="maybe">Maybe</label></div>
-        <div><label for="not-sure"><input id="not-sure" type="radio" name="recommend?" value="not sure">Not sure</label></div>
+    <section class="grouplet">
+        <div id="radio-title" class="title">Would you recommend freeCodeCamp to a friend?</div>
+        <div><label class="input-label" for="definitely"><input class="input" id="definitely" type="radio" name="recommend?" value="definitely" checked>Definitely</label></div>
+        <div><label class="input-label" for="maybe"><input class="input" id="maybe" type="radio" name="recommend?" value="maybe">Maybe</label></div>
+        <div><label class="input-label" for="not-sure"><input class="input" id="not-sure" type="radio" name="recommend?" value="not sure">Not sure</label></div>
     </section>
-    <div><label for="dropdown2">What is your favorite feature of freeCodeCamp?</label></div>
+    <div><label for="dropdown2" class="title">What is your favorite feature of freeCodeCamp?</label></div>
     <div>
         <select id="dropdown2" name="favorite feature">
                 <option value="select an option" disabled selected>Select an option</option>
@@ -89,22 +136,24 @@ input {
                 <option value="Community">Open Source</option>
                 <option value="Full time learner">Full time learner</option>
         </select>
-    </div>
-    <section>
-        <div><label for="1" id="checkbox"><input type="checkbox" name="improve?" value="Front-end Projects" class="clickable" id="1">Front-end Projects</label></div>
-        <div><label for="2" id="checkbox"><input type="checkbox" name="improve?" value="Back-end Projects" class="clickable" id="2">Back-end Projects</label></div>
-        <div><label for="3" id="checkbox"><input type="checkbox" name="improve?" value="Data Visualization" class="clickable" id="3">Data Visualization</label></div>
-        <div><label for="4" id="checkbox"><input type="checkbox" name="improve?" value="Challenges" class="clickable" id="4">Challenges</label></div>
-        <div><label for="5" id="checkbox"><input type="checkbox" name="improve?" value="Open Source Community" class="clickable" id="5">Open Source Community</label></div>
-        <div><label for="6" id="checkbox"><input type="checkbox" name="improve?" value="Gitter help rooms" class="clickable" id="6">Gitter help rooms</label></div>
-        <div><label for="7" id="checkbox"><input type="checkbox" name="improve?" value="Videos" class="clickable" id="7">Videos</label></div>
-        <div><label for="8" id="checkbox"><input type="checkbox" name="improve?" value="City Meetups" class="clickable" id="8">City Meetups</label></div>
-        <div><label for="9" id="checkbox"><input type="checkbox" name="improve?" value="Wiki" class="clickable" id="9">Wiki</label></div>
-        <div><label for="10" id="checkbox"><input type="checkbox" name="improve?" value="Forum" class="clickable" id="10">Forum</label></div>
-        <div><label for="11" id="checkbox"><input type="checkbox" name="improve?" value="Additional Courses" class="clickable" id="11">Additional Courses</label></div>
+    </div class="grouplet">
+    <label class="title" for="checkbox-section">What would you like to see improved?<span class="clue">(Check all that apply)</span></label>
+    <section id="checkbox-section">
+        <div><label for="1" class="input-label"><input class="input" type="checkbox" name="improve?" value="Front-end Projects" class="clickable" id="1">Front-end Projects</label></div>
+        <div><label for="2" class="input-label"><input class="input" type="checkbox" name="improve?" value="Back-end Projects" class="clickable" id="2">Back-end Projects</label></div>
+        <div><label for="3" class="input-label"><input class="input" type="checkbox" name="improve?" value="Data Visualization" class="clickable" id="3">Data Visualization</label></div>
+        <div><label for="4" class="input-label"><input class="input" type="checkbox" name="improve?" value="Challenges" class="clickable" id="4">Challenges</label></div>
+        <div><label for="5" class="input-label"><input class="input" type="checkbox" name="improve?" value="Open Source Community" class="clickable" id="5">Open Source Community</label></div>
+        <div><label for="6" class="input-label"><input class="input" type="checkbox" name="improve?" value="Gitter help rooms" class="clickable" id="6">Gitter help rooms</label></div>
+        <div><label for="7" class="input-label"><input class="input" type="checkbox" name="improve?" value="Videos" class="clickable" id="7">Videos</label></div>
+        <div><label for="8" class="input-label"><input class="input" type="checkbox" name="improve?" value="City Meetups" class="clickable" id="8">City Meetups</label></div>
+        <div><label for="9" class="input-label"><input class="input" type="checkbox" name="improve?" value="Wiki" class="clickable" id="9">Wiki</label></div>
+        <div><label for="10" class="input-label"><input class="input" type="checkbox" name="improve?" value="Forum" class="clickable" id="10">Forum</label></div>
+        <div><label for="11" class="input-label"><input class="input" type="checkbox" name="improve?" value="Additional Courses" class="clickable" id="11">Additional Courses</label></div>
     </section>
-    <div><textarea type="text" placeholder="Enter your comment here..."></textarea></div>
-    <div><button id ="submit" type="submit">Submit</button></div> 
+    <label class="title" for="textarea">Any comments or suggestions?</label>
+    <div><textarea id="textarea" type="text" placeholder="Enter your comment here..."></textarea></div>
+    <div class="submit"><button id ="submit" type="submit">Submit</button></div> 
     </form>
     </div>
     </div>
